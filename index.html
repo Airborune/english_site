@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог одежды</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1 class="logo">Fashion<span>Store</span></h1>
+
+    <nav class="nav">
+        <a href="#">Новинки</a>
+        <a href="#">Мужчинам</a>
+        <a href="#">Женщинам</a>
+        <a href="#">Распродажа</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <h2>Новая коллекция 2025</h2>
+    <p>Стиль. Простота. Комфорт.</p>
+</section>
+
+
+<main class="catalog">
+
+    <h2 class="section-title">Каталог одежды</h2>
+
+    <div class="catalog-container">
+
+        <div class="filters-wrapper">
+            <button class="filters-toggle" id="filtersToggle">Фильтры</button>
+
+            <aside class="filters-panel" id="filtersPanel">
+                <h3>Фильтры</h3>
+                <label class="filter-item"><input type="checkbox"> Платья</label>
+                <label class="filter-item"><input type="checkbox"> Куртки</label>
+                <label class="filter-item"><input type="checkbox"> Рубашки</label>
+                <label class="filter-item"><input type="checkbox"> Толстовки</label>
+                <label class="filter-item"><input type="checkbox"> Джинсы</label>
+            </aside>
+        </div>
+
+        <div class="grid">
+            <article class="card">
+                <img src="assets/summer dress.jpg" alt="dress">
+                <h3>Платье летнее</h3>
+                <p class="price">3 500 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/jeans jacket.jpg" alt="jacket">
+                <h3>Джинсовая куртка</h3>
+                <p class="price">5 200 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/shirt male.jpg" alt="shirt">
+                <h3>Рубашка мужская</h3>
+                <p class="price">2 400 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/coat.jpg" alt="coat">
+                <h3>Пальто демисезонное</h3>
+                <p class="price">9 800 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/hoodie.jpg" alt="hoodie">
+                <h3>Толстовка унисекс</h3>
+                <p class="price">3 100 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/jeans.jpg" alt="jeans">
+                <h3>Джинсы прямые</h3>
+                <p class="price">4 600 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/sweater.jpg" alt="sweater">
+                <h3>Свитер зимний</h3>
+                <p class="price">4 200 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/summer skirt.png" alt="skirt">
+                <h3>Юбка летняя</h3>
+                <p class="price">2 800 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/blouse.jpg" alt="blouse">
+                <h3>Блузка женская</h3>
+                <p class="price">3 000 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/shorts.jpg" alt="shorts">
+                <h3>Шорты мужские</h3>
+                <p class="price">1 900 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/sneakers.jpg" alt="sneakers">
+                <h3>Кроссовки унисекс</h3>
+                <p class="price">5 600 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+            <article class="card">
+                <img src="assets/hat.jpg" alt="hat">
+                <h3>Шапка вязаная</h3>
+                <p class="price">1 200 ₽</p>
+                <button class="btn">В корзину</button>
+            </article>
+        </div>
+    </div>
+
+</main>
+
+<script>
+const filtersToggle = document.getElementById('filtersToggle');
+const filtersPanel = document.getElementById('filtersPanel');
+const catalogContainer = document.querySelector('.catalog-container');
+
+filtersToggle.addEventListener('click', () => {
+    filtersPanel.classList.toggle('active');
+    catalogContainer.classList.toggle('shifted');
+});
+</script>
+
+
+
+<footer class="footer">
+    <p>© 2025 FashionStore — твой стиль начинается здесь</p>
+</footer>
+
+</body>
+</html>

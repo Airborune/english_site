@@ -1,0 +1,241 @@
+:root {
+    --color-bg: #f8f8f8;
+    --color-accent: #e74c3c;
+    --color-dark: #222;
+    --color-light: #fff;
+
+    --radius: 12px;
+    --transition: 0.3s ease;
+
+    --font-title: clamp(1.8rem, 4vw, 3rem);
+    --font-subtitle: clamp(1rem, 2vw, 1.4rem);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-dark);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5vw;
+    background: var(--color-light);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--color-accent);
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    background: var(--color-accent);
+    transition: var(--transition);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom right, #ffeaea, #fff);
+}
+
+.hero h2 {
+    font-size: var(--font-title);
+}
+
+.hero p {
+    font-size: var(--font-subtitle);
+    opacity: 0.7;
+}
+
+.catalog {
+    padding: 50px 5vw;
+}
+
+.section-title {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.grid {
+    display: grid;
+    /* minmax — тема из курса */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+
+.card {
+    background: var(--color-light);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: var(--transition);
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: var(--radius);
+    background: #f0f0f0;
+}
+/*
+.card img {
+    width: auto;
+    max-width: 100%
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: var(--radius);
+    background: #f0f0f0;
+    display: block;
+    margin: 0 auto;
+}*/
+
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+.btn {
+    padding: 12px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--color-accent);
+    color: var(--color-light);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: #eee;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+}
+
+.catalog-container {
+    display: flex;
+    position: relative;
+}
+
+.filters-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.filters-toggle {
+    margin-bottom: 15px;
+    background: var(--color-accent);
+    color: var(--color-light);
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    align-self: flex-start;
+}
+
+.filters-panel {
+    width: 0;
+    overflow: hidden;
+    background: var(--color-light);
+    padding: 0;
+    border-radius: var(--radius);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    transition: width var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: sticky;
+    top: 20px;
+}
+
+.filters-panel.active {
+    width: 200px;
+    padding: 20px;
+}
+
+.catalog-container.shifted .grid {
+    flex: 1;
+    transition: margin var(--transition);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    flex: 1;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
